@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Data Science Weekend</title>
+    <link rel="shortcut icon" href="https://datascience.or.id/frontend/assets/images/dsw2023/favicon.png"
+        type="image/png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span
+                                                    id="tenure_month_title">AVG
+                                                    Tenure months</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span
+                                                    id="tenure_month_value">-</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-users fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span
+                                                    id="monthly_purchase_title">AVG
+                                                    MONTLHY PURCHASE</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span
+                                                    id="monthly_purchase_value">-</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span
+                                                    id="cltv_title">AVG
+                                                    CLTV</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span id="cltv_value">-</span></div>
+                                        </div>
+                                        <div class="col-auto"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                                height="1em" fill="currentColor" viewBox="0 0 16 16"
+                                                class="bi bi-bar-chart-line-fill fa-2x text-gray-300">
+                                                <path
+                                                    d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z">
+                                                </path>
+                                            </svg></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-8">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Q3 Churn Comparison: Bandung vs Jakarta</h6>
+                                </div>
+                                <div id="map">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-xl-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 id="segmentation_title" class="text-primary fw-bold m-0">Q3 High-Churn Segments: Bandung & Jakarta
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <canvas id="customerSegmentation"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 id="product_title" class="text-primary fw-bold m-0">Q3 Product Usage: Top 4 in Bandung & Jakarta</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <canvas id="customerProduct"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 id="device_title" class="text-primary fw-bold m-0">Q3 Device Usage: Bandung & Jakarta</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div><canvas id="customerDevice"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright ©&nbsp; Rungkad Team 2023</span></div>
+                </div>
+            </footer>
+        </div>
+        <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <a class="border rounded d-inline scroll-to-top bg-success" href="./profile.html"
+            style="margin-bottom: 50px;"><i class="fas fa-info-circle" style="font-size: 17px;"></i></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

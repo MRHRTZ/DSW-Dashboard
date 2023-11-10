@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Money Change</title>
+    <style>
+        .money-container {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #eee;
+            display: inline-block;
+            margin: 20px;
+        }
+        
+        .money-change-animation {
+            animation: changeMoney 1s ease-in-out;
+        }
+        
+        @keyframes changeMoney {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="money-container">
+        <span id="moneyAmount">Rp 1.000.000</span>
+    </div>
+
+    <button onclick="ubahJumlahUang()">Ubah Jumlah Uang</button>
+
+    <script>
+        function ubahJumlahUang() {
+            // Mengambil elemen uang
+            var moneyElement = document.getElementById('moneyAmount');
+
+            // Mengambil nilai uang saat ini dan mengonversi ke angka
+            var currentAmount = parseFloat(moneyElement.innerText.replace(/[^0-9,-]+/g, '').replace(/,/g, ''));
+
+            // Menghitung nilai baru (misalnya, menambah Rp 500.000)
+            var newAmount = currentAmount + 500000;
+
+            // Menambahkan kelas animasi
+            moneyElement.classList.add('money-change-animation');
+
+            // Menetapkan nilai uang baru dengan format Rupiah
+            moneyElement.innerText = formatRupiah(newAmount);
+
+            // Menghapus kelas animasi setelah animasi selesai
+            setTimeout(function () {
+                moneyElement.classList.remove('money-change-animation');
+            }, 1000);
+        }
+
+        // Fungsi untuk memformat angka ke format Rupiah
+        function formatRupiah(angka) {
+            var reverse = angka.toString().split('').reverse().join('');
+            var ribuan = reverse.match(/\d{1,3}/g);
+            var hasil = ribuan.join('.').split('').reverse().join('');
+            return 'Rp ' + hasil;
+        }
+    </script>
+</body>
+
+</html>
