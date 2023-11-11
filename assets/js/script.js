@@ -281,7 +281,7 @@ $(document).ready(function () {
                 ],
                 borderWidth: 1,
                 datalabels: {
-                    align: 'start',
+                    align: 'end',
                     anchor: 'end'
                 }
             }]
@@ -293,6 +293,9 @@ $(document).ready(function () {
             options: {
                 responsive: true,
                 plugins: {
+                    datalabels: {
+                        color: '#000'
+                    },
                     legend: {
                         display: false,
                         position: 'top',
@@ -370,7 +373,7 @@ $(document).ready(function () {
                 borderColor: ["#fff", "#fff", "#fff"],
                 borderWidth: 1,
                 datalabels: {
-                    align: 'start',
+                    align: 'end',
                     anchor: 'end'
                 }
             }]
@@ -381,6 +384,9 @@ $(document).ready(function () {
             options: {
                 responsive: true,
                 plugins: {
+                    datalabels: {
+                        color: '#000'
+                    },
                     legend: {
                         display: false,
                         position: 'top',
