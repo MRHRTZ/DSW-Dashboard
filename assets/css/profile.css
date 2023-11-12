@@ -10,7 +10,7 @@ body {
     color: #404245;
     font-size: 36px;
     font-weight: 800;
-    margin-top: 70px;
+    margin-top: 10px;
     margin-bottom: 72px;
     text-align: center;
 }
@@ -20,7 +20,6 @@ body {
     font-family: "Merriweather", serif;
     flex-wrap: wrap;
     justify-content: center;
-    height: 100vh;
     margin: 0;
 }
 
